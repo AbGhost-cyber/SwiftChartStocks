@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SwiftChartStocksApp: App {
+    @StateObject var appVM = AppViewModel()
     var body: some Scene {
         WindowGroup {
-            MainListView()
+            NavigationStack {
+                MainListView()
+            }
+            .environmentObject(appVM)
         }
     }
 }

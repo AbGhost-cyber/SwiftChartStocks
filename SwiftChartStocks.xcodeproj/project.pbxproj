@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045E3F99297D0217003351A7 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3F98297D0217003351A7 /* EmptyStateView.swift */; };
+		045E3F9B297D02C2003351A7 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3F9A297D02C2003351A7 /* ErrorStateView.swift */; };
+		045E3F9D297D03FC003351A7 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3F9C297D03FC003351A7 /* LoadingStateView.swift */; };
+		045E3FA0297D0477003351A7 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3F9F297D0477003351A7 /* AppViewModel.swift */; };
+		045E3FA3297D050D003351A7 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3FA2297D050D003351A7 /* Stubs.swift */; };
+		045E3FA5297D05E2003351A7 /* MockStocksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3FA4297D05E2003351A7 /* MockStocksAPI.swift */; };
+		045E3FA7297D061D003351A7 /* MockTickerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3FA6297D061D003351A7 /* MockTickerListRepository.swift */; };
+		045E3FA9297D0842003351A7 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3FA8297D0842003351A7 /* QuotesViewModel.swift */; };
+		045E3FAB297D08AD003351A7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3FAA297D08AD003351A7 /* Utils.swift */; };
+		045E3FAE297D0985003351A7 /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E3FAD297D0985003351A7 /* Quote+Extensions.swift */; };
 		04C05EAB297CF11400E56BE0 /* SwiftChartStocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C05EAA297CF11400E56BE0 /* SwiftChartStocksApp.swift */; };
 		04C05EAD297CF11400E56BE0 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C05EAC297CF11400E56BE0 /* MainListView.swift */; };
 		04C05EAF297CF11600E56BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C05EAE297CF11600E56BE0 /* Assets.xcassets */; };
@@ -17,6 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045E3F98297D0217003351A7 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		045E3F9A297D02C2003351A7 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		045E3F9C297D03FC003351A7 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		045E3F9F297D0477003351A7 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		045E3FA2297D050D003351A7 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		045E3FA4297D05E2003351A7 /* MockStocksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStocksAPI.swift; sourceTree = "<group>"; };
+		045E3FA6297D061D003351A7 /* MockTickerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTickerListRepository.swift; sourceTree = "<group>"; };
+		045E3FA8297D0842003351A7 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
+		045E3FAA297D08AD003351A7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		045E3FAD297D0985003351A7 /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
 		04C05EA7297CF11400E56BE0 /* SwiftChartStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftChartStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C05EAA297CF11400E56BE0 /* SwiftChartStocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftChartStocksApp.swift; sourceTree = "<group>"; };
 		04C05EAC297CF11400E56BE0 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
@@ -38,6 +58,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045E3F97297D0205003351A7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				045E3F98297D0217003351A7 /* EmptyStateView.swift */,
+				045E3F9A297D02C2003351A7 /* ErrorStateView.swift */,
+				045E3F9C297D03FC003351A7 /* LoadingStateView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		045E3F9E297D0468003351A7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				045E3F9F297D0477003351A7 /* AppViewModel.swift */,
+				045E3FA8297D0842003351A7 /* QuotesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		045E3FA1297D04EF003351A7 /* Mocks & Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				045E3FA2297D050D003351A7 /* Stubs.swift */,
+				045E3FA4297D05E2003351A7 /* MockStocksAPI.swift */,
+				045E3FA6297D061D003351A7 /* MockTickerListRepository.swift */,
+			);
+			path = "Mocks & Stubs";
+			sourceTree = "<group>";
+		};
+		045E3FAC297D0979003351A7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				045E3FAD297D0985003351A7 /* Quote+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		04C05E9E297CF11400E56BE0 = {
 			isa = PBXGroup;
 			children = (
@@ -57,12 +114,15 @@
 		04C05EA9297CF11400E56BE0 /* SwiftChartStocks */ = {
 			isa = PBXGroup;
 			children = (
+				045E3FAC297D0979003351A7 /* Extensions */,
+				045E3F9E297D0468003351A7 /* ViewModels */,
 				04C05EBF297CF8DE00E56BE0 /* Views */,
 				04C05EBC297CF80800E56BE0 /* Models */,
-				04C05EAA297CF11400E56BE0 /* SwiftChartStocksApp.swift */,
-				04C05EAC297CF11400E56BE0 /* MainListView.swift */,
 				04C05EAE297CF11600E56BE0 /* Assets.xcassets */,
+				045E3FA1297D04EF003351A7 /* Mocks & Stubs */,
 				04C05EB0297CF11600E56BE0 /* Preview Content */,
+				045E3FAA297D08AD003351A7 /* Utils.swift */,
+				04C05EAA297CF11400E56BE0 /* SwiftChartStocksApp.swift */,
 			);
 			path = SwiftChartStocks;
 			sourceTree = "<group>";
@@ -86,6 +146,8 @@
 		04C05EBF297CF8DE00E56BE0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04C05EAC297CF11400E56BE0 /* MainListView.swift */,
+				045E3F97297D0205003351A7 /* Common */,
 				04C05EC0297CF8EA00E56BE0 /* TickerListRowView.swift */,
 			);
 			path = Views;
@@ -167,8 +229,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045E3FA3297D050D003351A7 /* Stubs.swift in Sources */,
+				045E3FA9297D0842003351A7 /* QuotesViewModel.swift in Sources */,
+				045E3FAE297D0985003351A7 /* Quote+Extensions.swift in Sources */,
+				045E3FA5297D05E2003351A7 /* MockStocksAPI.swift in Sources */,
+				045E3F9D297D03FC003351A7 /* LoadingStateView.swift in Sources */,
 				04C05EAD297CF11400E56BE0 /* MainListView.swift in Sources */,
+				045E3FAB297D08AD003351A7 /* Utils.swift in Sources */,
+				045E3FA0297D0477003351A7 /* AppViewModel.swift in Sources */,
 				04C05EAB297CF11400E56BE0 /* SwiftChartStocksApp.swift in Sources */,
+				045E3F99297D0217003351A7 /* EmptyStateView.swift in Sources */,
+				045E3FA7297D061D003351A7 /* MockTickerListRepository.swift in Sources */,
+				045E3F9B297D02C2003351A7 /* ErrorStateView.swift in Sources */,
 				04C05EBE297CF82000E56BE0 /* TickerListRowData.swift in Sources */,
 				04C05EC1297CF8EA00E56BE0 /* TickerListRowView.swift in Sources */,
 			);
