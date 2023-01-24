@@ -15,7 +15,7 @@ struct ErrorStateView: View {
         HStack {
             Spacer()
             VStack(spacing: 16) {
-                Text("Error")
+                Text(error)
                 if let retryCallback {
                     Button("Retry", action: retryCallback)
                         .buttonStyle(.borderedProminent)
