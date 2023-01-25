@@ -26,6 +26,10 @@ struct MainListView: View {
             .refreshable {
                 await quotesVM.fetchQuotes(tickers: appVM.tickers)
             }
+            .sheet(item: $appVM.selectedTicker) {
+                StockTickerView(quoteVM: .init(ticker: $0))
+                    .presentationDetents([.height(560)])
+            }
             .task(id: appVM.tickers) {
                 await quotesVM.fetchQuotes(tickers: appVM.tickers)
             }
@@ -39,7 +43,9 @@ struct MainListView: View {
             ForEach(appVM.tickers) { ticker in
                 TickerListRowView(data: .init(symbol: ticker.symbol, name: ticker.shortname, price: quotesVM.priceForTicker(ticker), rowType: .main))
                     .contentShape(Rectangle())
-                    .onTapGesture { }
+                    .onTapGesture {
+                        appVM.selectedTicker = ticker
+                    }
             }
             .onDelete {appVM.removeTickers(atOffsets: $0)}
         }.opacity(searchVm.isSearching ? 0 : 1)
@@ -86,14 +92,14 @@ struct MainListView: View {
 
 struct MainListView_Previews: PreviewProvider {
     @StateObject static var appVm: AppViewModel = {
-        let vm = AppViewModel()
-        vm.tickers = Ticker.stubs
-        return vm
+        var mock = MockTickerListRepository()
+        mock.stubbedLoad = {Ticker.stubs}
+        return AppViewModel(repository: mock)
     }()
     @StateObject static var emptyVm: AppViewModel = {
-        let vm = AppViewModel()
-        vm.tickers = []
-        return vm
+        var mock = MockTickerListRepository()
+        mock.stubbedLoad = {[]}
+        return AppViewModel(repository: mock)
     }()
      static var quotesVM: QuotesViewModel = {
         let vm = QuotesViewModel()
