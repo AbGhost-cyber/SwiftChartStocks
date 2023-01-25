@@ -20,6 +20,7 @@
 		045FD51C29801A1E0045DB65 /* FetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FD51B29801A1E0045DB65 /* FetchPhase.swift */; };
 		045FD51E29801B4C0045DB65 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FD51D29801B4C0045DB65 /* SearchViewModel.swift */; };
 		045FD52029801FD80045DB65 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FD51F29801FD80045DB65 /* SearchView.swift */; };
+		045FD5232980EAED0045DB65 /* StocksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FD5222980EAED0045DB65 /* StocksAPI.swift */; };
 		04C05EAB297CF11400E56BE0 /* SwiftChartStocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C05EAA297CF11400E56BE0 /* SwiftChartStocksApp.swift */; };
 		04C05EAD297CF11400E56BE0 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C05EAC297CF11400E56BE0 /* MainListView.swift */; };
 		04C05EAF297CF11600E56BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C05EAE297CF11600E56BE0 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		045FD51B29801A1E0045DB65 /* FetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhase.swift; sourceTree = "<group>"; };
 		045FD51D29801B4C0045DB65 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		045FD51F29801FD80045DB65 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		045FD5222980EAED0045DB65 /* StocksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksAPI.swift; sourceTree = "<group>"; };
 		04C05EA7297CF11400E56BE0 /* SwiftChartStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftChartStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C05EAA297CF11400E56BE0 /* SwiftChartStocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftChartStocksApp.swift; sourceTree = "<group>"; };
 		04C05EAC297CF11400E56BE0 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		045FD5212980EADC0045DB65 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				045FD5222980EAED0045DB65 /* StocksAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		04C05E9E297CF11400E56BE0 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		04C05EA9297CF11400E56BE0 /* SwiftChartStocks */ = {
 			isa = PBXGroup;
 			children = (
+				045FD5212980EADC0045DB65 /* Services */,
 				045E3FAC297D0979003351A7 /* Extensions */,
 				045E3F9E297D0468003351A7 /* ViewModels */,
 				04C05EBF297CF8DE00E56BE0 /* Views */,
@@ -239,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				045E3FA3297D050D003351A7 /* Stubs.swift in Sources */,
+				045FD5232980EAED0045DB65 /* StocksAPI.swift in Sources */,
 				045E3FA9297D0842003351A7 /* QuotesViewModel.swift in Sources */,
 				045FD51E29801B4C0045DB65 /* SearchViewModel.swift in Sources */,
 				045E3FAE297D0985003351A7 /* Quote+Extensions.swift in Sources */,

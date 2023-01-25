@@ -11,7 +11,8 @@ import XCAStocksAPI
 struct MainListView: View {
     
     @EnvironmentObject var appVM: AppViewModel
-    @StateObject var quotesVM = QuotesViewModel()
+    @StateObject var quotesVM: QuotesViewModel = QuotesViewModel()
+    @StateObject var searchVm: SearchViewModel = SearchViewModel()
     
     var body: some View {
         tickerListView
@@ -21,7 +22,18 @@ struct MainListView: View {
                 titleToolbar
                 attributeToolbar
             }
+            .searchable(text: $searchVm.query)
+            .refreshable {
+                await quotesVM.fetchQuotes(tickers: appVM.tickers)
+            }
+            .task(id: appVM.tickers) {
+                await quotesVM.fetchQuotes(tickers: appVM.tickers)
+            }
     }
+    
+    
+    
+    
     private var tickerListView: some View {
         List {
             ForEach(appVM.tickers) { ticker in
@@ -30,13 +42,16 @@ struct MainListView: View {
                     .onTapGesture { }
             }
             .onDelete {appVM.removeTickers(atOffsets: $0)}
-        }
+        }.opacity(searchVm.isSearching ? 0 : 1)
     }
     
     @ViewBuilder
     private var overlayView: some View {
-        if appVM.tickers.isEmpty {
+        if appVM.tickers.isEmpty && !searchVm.isSearching {
             EmptyStateView(text: appVM.emptyTickersText)
+        }
+        if searchVm.isSearching {
+            SearchView(searchVm: searchVm)
         }
     }
     private var titleToolbar: some ToolbarContent {
@@ -46,7 +61,7 @@ struct MainListView: View {
                 Text(appVM.subtitleText)
                     .foregroundColor(Color(uiColor: .secondaryLabel))
             }.font(.title2.weight(.heavy))
-                .padding()
+                .padding(.bottom)
         }
     }
     
@@ -80,20 +95,25 @@ struct MainListView_Previews: PreviewProvider {
         vm.tickers = []
         return vm
     }()
-    @StateObject static var quotesVM: QuotesViewModel = {
+     static var quotesVM: QuotesViewModel = {
         let vm = QuotesViewModel()
         vm.quotesDict = Quote.stubsDict
+        return vm
+    }()
+     static var searchVm: SearchViewModel = {
+        let vm = SearchViewModel()
+         vm.phase = .success(Ticker.stubs)
         return vm
     }()
     static var previews: some View {
         Group {
             NavigationStack {
-                MainListView(quotesVM: quotesVM)
+                MainListView(quotesVM: quotesVM, searchVm: searchVm)
             }
             .environmentObject(appVm)
             .previewDisplayName("With Tickers")
             NavigationStack {
-                MainListView(quotesVM: quotesVM)
+                MainListView(quotesVM: quotesVM, searchVm: searchVm)
             }
             .environmentObject(emptyVm)
             .previewDisplayName("Without Tickers")
